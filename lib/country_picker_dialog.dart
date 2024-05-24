@@ -81,8 +81,8 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
   Widget build(BuildContext context) {
     final mediaWidth = MediaQuery.of(context).size.width;
     final width = widget.style?.width ?? mediaWidth;
-    const defaultHorizontalPadding = 40.0;
-    const defaultVerticalPadding = 24.0;
+    const defaultHorizontalPadding = 10.0;
+    const defaultVerticalPadding = 2.0;
     return Dialog(
       insetPadding: EdgeInsets.symmetric(
           vertical: defaultVerticalPadding,
@@ -112,7 +112,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                 },
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 2),
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
@@ -120,6 +120,8 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                 itemBuilder: (ctx, index) => Column(
                   children: <Widget>[
                     ListTile(
+                      dense: true,
+                      visualDensity: VisualDensity(vertical: -3), 
                       leading: kIsWeb
                           ? Image.asset(
                               'assets/flags/${_filteredCountries[index].code.toLowerCase()}.png',
