@@ -84,6 +84,9 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
     const defaultHorizontalPadding = 10.0;
     const defaultVerticalPadding = 2.0;
     return Dialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.zero,
+      ),
       insetPadding: EdgeInsets.symmetric(
           vertical: defaultVerticalPadding,
           horizontal: mediaWidth > (width + defaultHorizontalPadding * 2)
